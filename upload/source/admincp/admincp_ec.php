@@ -385,9 +385,9 @@ if($operation == 'alipay') {
 		showformheader('ec&operation=paymentorders');
 		showtableheader('ec_paymentorders_search');
 		showtablerow('', array(
-			'width="50"', 'width="200"',
-			'width="50"', 'width="200"',
-			'width="50"', ''
+			'style="width:100px"', 'style="width:200px"',
+			'style="width:100px"', 'style="width:200px"',
+			'style="width:100px"', ''
 		),
 			array(
 				lang('admincp', 'ec_orders_search_id'), '<input type="text" class="txt" name="out_biz_no" value="' . $queryparams['out_biz_no'] . '" />',
@@ -563,9 +563,9 @@ if($operation == 'alipay') {
 		$statusoptions[] = '<option value="1"' . ($queryparams['status'] === '2' ? ' selected' : '') . '>' . $lang['ec_transferorders_status_2'] . '</option>';
 		$statusoptions[] = '<option value="2"' . ($queryparams['status'] === '3' ? ' selected' : '') . '>' . $lang['ec_transferorders_status_3'] . '</option>';
 		showtablerow('', array(
-			'width="50"', 'width="200"',
-			'width="50"', 'width="200"',
-			'width="50"', ''
+			'style="width:100px"', 'style="width:200px"',
+			'style="width:100px"', 'style="width:200px"',
+			'style="width:100px"', ''
 		),
 			array(
 				lang('admincp', 'ec_transferorders_channel'), '<select name="channel">' . implode('', $channeloptions) . '</select>',
