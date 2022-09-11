@@ -1,5 +1,5 @@
 (function () {
-	var prevnav = prevtab = menunav = null;
+	var prevnav = prevtab = menunav = navt = null;
 	function switchnav(key, nolocation) {
 		if (!key || !$('header_' + key)) {
 			return;
@@ -58,7 +58,13 @@
 			switchnav(this.id.substring(7));
 		});
 		nav.addEventListener('mouseover', function () {
-			switchnav(this.id.substring(7), true);
+			id = this.id.substring(7);
+			navt = setTimeout(function () {
+				switchnav(id, true);
+			}, 500);
+		});
+		nav.addEventListener('mouseout', function () {
+			clearTimeout(navt)
 		});
 	});
 	document.querySelectorAll('nav ul ul a').forEach(function (tab) {
