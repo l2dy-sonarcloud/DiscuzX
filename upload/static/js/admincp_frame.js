@@ -10,8 +10,10 @@
 		}
 		href = $('lm_' + key).childNodes[1].childNodes[0].childNodes[0].href;
 		if (key == 'cloudaddons' || key == 'uc') {
-			window.open(href);
-			doane();
+			if (!nolocation) {
+				window.open(href);
+				doane();
+			}
 		} else {
 			if (prevnav == key && !getcookie('admincp_oldlayout')) {
 				$('header_' + prevnav).className = '';
@@ -48,12 +50,15 @@
 	}
 	document.querySelectorAll('nav > ul > li > a').forEach(function (nav) {
 		nav.addEventListener('click', function () {
-			switchnav(this.id.substring(7));
+			switchnav(this.id.substring(7), true);
 		});
 	});
 	document.querySelectorAll('#topmenu button').forEach(function (nav) {
 		nav.addEventListener('click', function () {
 			switchnav(this.id.substring(7));
+		});
+		nav.addEventListener('mouseover', function () {
+			switchnav(this.id.substring(7), true);
 		});
 	});
 	document.querySelectorAll('nav ul ul a').forEach(function (tab) {
