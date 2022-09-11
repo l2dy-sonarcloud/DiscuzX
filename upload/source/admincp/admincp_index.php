@@ -75,6 +75,7 @@ echo '<div class="drow">';
 echo '<div class="dcol d-23">';
 show_sysinfo();
 show_news();
+show_forever_thanks();
 echo '</div>';
 
 echo '<div class="dcol d-13">';
@@ -82,9 +83,6 @@ show_widgets();
 echo '</div>';
 
 echo '</div>';
-
-show_git_thanks();
-show_forever_thanks();
 
 echo '</div>';
 
@@ -465,28 +463,6 @@ function show_widgets() {
 	}
 }
 
-function show_git_thanks() {
-	showboxheader('contributors', 'fixpadding', 'id="contributors"');
-	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(
-		cplang('home_git_thanks'),
-		'
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=laozhoubuluo" class="lightlink2" target="_blank">&#x8001;&#x5468;&#x90E8;&#x843D;</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=popcorner" class="lightlink2" target="_blank">popcorner</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=oldhuhu" class="lightlink2" target="_blank">oldhuhu</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=zoewho" class="lightlink2" target="_blank">&#x6E56;&#x4E2D;&#x6C89;</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=3dming" class="lightlink2" target="_blank">&#x8BF8;&#x845B;&#x6653;&#x660E;</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=brotherand2" class="lightlink2" target="_blank">brotherand2</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=contributions" class="lightlink2" target="_blank">git</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=nftstudio" class="lightlink2" target="_blank">&#x9006;&#x98CE;&#x5929;</a>
-				<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=ONEXIN" class="lightlink2" target="_blank">ONEXIN</a>'
-	));
-	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(
-		'',
-		'<a href="https://gitee.com/Discuz/DiscuzX/contributors?ref=master" class="lightlink2" target="_blank">'.cplang('contributors_see').'</a>'
-	));
-	showboxfooter();
-}
-
 function show_forever_thanks() {
 	$copyRightMessage = array(
 		'&#x7248;&#x6743;&#x6240;&#x6709;',
@@ -497,6 +473,21 @@ function show_forever_thanks() {
 	showboxheader('home_dev', 'fixpadding', 'id="home_dev"');
 	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array($copyRightMessage[0], '<span class="bold">'.$copyRightMessage[1].'</span>'));
 	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array($copyRightMessage[2], '<span class="bold">'.$copyRightMessage[3].'</span>'));
+	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(cplang('contributors'),
+		'<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=laozhoubuluo" class="lightlink2" target="_blank">&#x8001;&#x5468;&#x90E8;&#x843D;</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=popcorner" class="lightlink2" target="_blank">popcorner</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=oldhuhu" class="lightlink2" target="_blank">oldhuhu</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=zoewho" class="lightlink2" target="_blank">&#x6E56;&#x4E2D;&#x6C89;</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=3dming" class="lightlink2" target="_blank">&#x8BF8;&#x845B;&#x6653;&#x660E;</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=brotherand2" class="lightlink2" target="_blank">brotherand2</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=contributions" class="lightlink2" target="_blank">git</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=nftstudio" class="lightlink2" target="_blank">&#x9006;&#x98CE;&#x5929;</a>
+	<a href="https://gitee.com/Discuz/DiscuzX/commits/master?user=ONEXIN" class="lightlink2" target="_blank">ONEXIN</a>'
+	));
+	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(
+		'',
+		'<a href="https://gitee.com/Discuz/DiscuzX/contributors?ref=master" class="lightlink2" target="_blank">'.cplang('contributors_see').'</a>'
+	));
 	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(cplang('home_dev_manager'),
 		'<a href="http://www.discuz.net/home.php?mod=space&uid=1" class="lightlink2 smallfont" target="_blank">'.cplang('dev_manager').'</a>'
 	));
@@ -512,8 +503,7 @@ function show_forever_thanks() {
 	<a href="http://www.discuz.net/home.php?mod=space&uid=2829" class="lightlink2 smallfont" target="_blank">Mengshu \'msxcms\' Chen</a>
 	<a href="http://www.discuz.net/home.php?mod=space&uid=492114" class="lightlink2 smallfont" target="_blank">Liang \'Metthew\' Xu</a>
 	<a href="http://www.discuz.net/home.php?mod=space&uid=1087718" class="lightlink2 smallfont" target="_blank">Yushuai \'Max\' Cong</a>
-	<a href="http://www.discuz.net/home.php?mod=space&uid=875919" class="lightlink2 smallfont" target="_blank">Jie \'tom115701\' Zhang</a>
-	'
+	<a href="http://www.discuz.net/home.php?mod=space&uid=875919" class="lightlink2 smallfont" target="_blank">Jie \'tom115701\' Zhang</a>'
 	));
 	showboxrow('', array('class="dcol d-1 lineheight"', 'class="dcol lineheight team"'), array(cplang('home_dev_skins'),
 		'<a href="http://www.discuz.net/home.php?mod=space&uid=294092" class="lightlink2 smallfont" target="_blank">Fangming \'Lushnis\' Li</a>
